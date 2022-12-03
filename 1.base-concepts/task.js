@@ -1,23 +1,26 @@
 "use strict"
 function solveEquation(a, b, c) {
   let arr = [];
-  let d = b**2-4*a*c;
+  let d1;
+  let d2;
+  let d = Math.pow(b,2) - 4 * a * c;
+
   if (d>0) {
-    let d1=(-b + Math.sqrt(d))/(2*a);
-    let d2=(-b - Math.sqrt(d))/(2*a);
-    alert(d1);
-    alert(d2); 
-  
-  } else if (d==0) {
-    let d3=(-b/(2*a));
-    alert(d3);
-    
+    d1 = (-b + Math.sqrt(d))/(2*a);
+    d2 = (-b - Math.sqrt(d))/(2*a);
+    arr.push(d1);
+    arr.push(d2); 
+    console.log("Первый корень: " + arr[0] + "Второй корень: " + arr[1]);
+
+  } else if (d===0) {
+    d1 = (-b/(2*a));
+    arr.push(d1);
+    console.log(arr);
+
   } else
-  return; {
-    return arr;
-  }
-  
-  
+    console.log("Корней нет.") 
+   
+  return arr;  
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
