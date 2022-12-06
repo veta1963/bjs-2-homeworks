@@ -26,7 +26,7 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let bodyCredit;
   let monthPayment;
-  let totalAmount;
+  let remainderAmount;
 
  if (
     isNaN(percent) ||
@@ -41,7 +41,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   percent = (percent / 100) / 12;
   bodyCredit = amount - contribution;
   monthPayment = bodyCredit * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
-  totalAmount = +((monthPayment * countMonths).toFixed(2));
+  remainderAmount = +((monthPayment * countMonths).toFixed(2));
 
-  return totalAmount;
+  return remainderAmount;
 }
