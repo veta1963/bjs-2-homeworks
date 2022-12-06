@@ -36,12 +36,12 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     ) {
        console.log('Один из параметров содержит неверное значение');
        return false;
-    }
+    } else
 
   percent = (percent / 100) / 12;
   bodyCredit = amount - contribution;
   monthPayment = bodyCredit * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
-  totalAmount = parseFloat((monthPayment * countMonths).toFixed(2));
+  totalAmount = +((monthPayment * countMonths).toFixed(2));
 
   return totalAmount;
 }
