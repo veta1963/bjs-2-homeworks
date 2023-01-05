@@ -18,8 +18,8 @@ Student.prototype.addMarks = function (...marks) {
 }
 
 Student.prototype.getAverage = function () {
-    if (!this.marks) {
-      return;
+    if (!this.marks || this.marks.length === 0) {
+      return 0;
     } 
       let sum = 0;
       for (let i = 0; i < this.marks.length; i++) {
