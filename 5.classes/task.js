@@ -7,17 +7,17 @@ class PrintEditionItem {
         this.type = null;
 	}
     fix() {
-        this.state *= 1,5; 
+        this.state *= 1.5; 
     }
 
     set state(number) {
         if (number < 0) {
-            this._state === 0;
+            this._state = 0;
         } else
         if (number > 100) {
-            this._state === 100;
+            this._state = 100;
         } else {
-            this._state === number;
+            this._state = number;
         }
     }
 
@@ -36,8 +36,8 @@ class Magazine extends PrintEditionItem {
 class Book extends PrintEditionItem {
     constructor(name, releaseDate, pagesCount, author) {
         super(name, releaseDate, pagesCount);
-        this.type = "book";
         this.authorBook = author;
+        this.type = "book";        
     }    
 }
 
