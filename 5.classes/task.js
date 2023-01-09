@@ -33,10 +33,10 @@ class Magazine extends PrintEditionItem {
     }
 }
 
-class Book extends PrintEditionItem {
+class Book extends PrintEditionItem {   
     constructor(name, releaseDate, pagesCount, author) {
-        super(name, releaseDate, pagesCount);
-        this.authorBook = author;
+        this.author = author;
+        super(name, releaseDate, pagesCount);        
         this.type = "book";        
     }    
 }
@@ -76,7 +76,7 @@ class Library {
     }
 
     findBookBy(type, value) {
-        return this.books.find(book => book(type) === value) || null;
+        return this.books.find(book => book[type] === value) || null;
     }
 
     giveBookByName(bookName) {
@@ -93,7 +93,7 @@ class Library {
 
 class Student {
     constructor(name, mark) {
-        this.nameStudent = name;
+        this.nameStudent = name;       
         this.marks = mark;
     }
 
@@ -101,7 +101,7 @@ class Student {
         if(mark < 2 || mark > 5) {
             return;
         } else 
-        this.subject = [];
+        this.subject = {};
         this.marks.push(mark);
     }
 
