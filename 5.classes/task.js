@@ -100,9 +100,11 @@ class Student {
     addMark(mark) {
         if(mark < 2 || mark > 5) {
             return;
-        } else 
-        this.subject = {};
-        this.marks.push(mark);
+        } else if (subject === 0){
+            this.subject = [];      
+            this.subjects = {};
+            this.marks.push(mark);        
+        }
     }
 
     getAverageBySubject(subject) {
