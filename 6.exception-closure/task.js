@@ -1,5 +1,5 @@
-﻿function parseCount(number) {    
-    Number.parseFloat(number);
+﻿function parseCount(a) {    
+    let number = Number.parseFloat(a);
     if (isNaN(number)) {
         throw new Error ("невалидное значение");
     }     
@@ -11,7 +11,9 @@ function validateCount(number) {
         return parseCount(number);                      
     } catch (error) {    
         throw new Error ("невалидное значение"); 
-    }  
+    } finally { 
+        return number;
+    }
 }
 
 class Triangle {
@@ -24,10 +26,10 @@ class Triangle {
         }
     }    
     get perimeter() {            
-        return (a + b + c);
+        return (this.a + this.b + this.c);
     }
     get area() {        
-        let p = (Math.sqrt(perimeter()/2(perimeter()/2 - a)*(perimeter()/2 - b)*(perimete()/2 - c))).toFixed(3);        
+        let p = (Math.sqrt(this.perimeter/2(this.perimeter/2 - a)*(this.perimeter/2 - b)*(this.perimete/2 - c))).toFixed(3);        
         return p;        
     }
 }
