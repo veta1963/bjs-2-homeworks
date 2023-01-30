@@ -95,12 +95,13 @@ class Student {
     constructor(name) {
         this.name = name;        
         this.marks = {};
+        this.subjects = {};
     }
 
     addMark(mark, subject) {        
         if(mark < 2 && mark > 5) {
             return;
-        } else if (Object.keys(this.marks).includes(subject) === false){            
+        } else if (Object.keys(this.subjects).hasOwnProperty(subject) === false){            
            this.subject = [];
         }
         this.subject.push(mark);        
